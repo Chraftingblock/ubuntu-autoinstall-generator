@@ -1,6 +1,6 @@
 # Ubuntu Autoinstall Generator
 A script to generate a fully-automated ISO image for installing Ubuntu onto a machine without human interaction. This uses the new autoinstall method
-for Ubuntu 20.04 and newer.
+for Ubuntu 22.04 and newer.
 
 ## [Looking for the desktop version?](https://github.com/covertsh/ubuntu-preseed-iso-generator)
 
@@ -29,7 +29,7 @@ Tested on a host running Ubuntu 20.04.1.
 ```
 Usage: ubuntu-autoinstall-generator.sh [-h] [-v] [-a] [-e] [-u user-data-file] [-m meta-data-file] [-k] [-c] [-r] [-s source-iso-file] [-d destination-iso-file]
 
-💁 This script will create fully-automated Ubuntu 20.04 Focal Fossa installation media.
+💁 This script will create fully-automated Ubuntu 22.04 Jammy Jellyfish installation media.
 
 Available options:
 
@@ -40,7 +40,7 @@ Available options:
                         autoinstall user-data and meta-data files.
                         For more information see: https://ubuntu.com/server/docs/install/autoinstall-quickstart
 -e, --use-hwe-kernel    Force the generated ISO to boot using the hardware enablement (HWE) kernel. Not supported
-                        by early Ubuntu 20.04 release ISOs.
+                        by early Ubuntu 22.04 release ISOs.
 -u, --user-data         Path to user-data file. Required if using -a
 -m, --meta-data         Path to meta-data file. Will be an empty file if not specified and using -a
 -k, --no-verify         Disable GPG verification of the source ISO file. By default SHA256SUMS-<current date> and
@@ -50,7 +50,7 @@ Available options:
                         saved in a new keyring in the script directory.
 -r, --use-release-iso   Use the current release ISO instead of the daily ISO. The file will be used if it already
                         exists.
--s, --source            Source ISO file. By default the latest daily ISO for Ubuntu 20.04 will be downloaded
+-s, --source            Source ISO file. By default the latest daily ISO for Ubuntu 22.04 will be downloaded
                         and saved as <script directory>/ubuntu-original-<current date>.iso
                         That file will be used by default if it already exists.
 -d, --destination       Destination ISO file. By default <script directory>/ubuntu-autoinstall-<current date>.iso will be
@@ -64,12 +64,12 @@ user@testbox:~$ bash ubuntu-autoinstall-generator.sh -a -u user-data.example -d 
 [2020-12-23 14:06:07] 📁 Created temporary working directory /tmp/tmp.jrmlEaDhL3
 [2020-12-23 14:06:07] 🔎 Checking for required utilities...
 [2020-12-23 14:06:07] 👍 All required utilities are installed.
-[2020-12-23 14:06:07] 🌎 Downloading current daily ISO image for Ubuntu 20.04 Focal Fossa...
-[2020-12-23 14:08:01] 👍 Downloaded and saved to /home/user/ubuntu-original-2020-12-23.iso
+[2020-12-23 14:06:07] 🌎 Downloading current daily ISO image for Ubuntu 22.04 Jammy Jellyfish...
+[2020-12-23 14:08:01] 👍 Downloaded and saved to /home/user/ubuntu-original-2023-12-23.iso
 [2020-12-23 14:08:01] 🌎 Downloading SHA256SUMS & SHA256SUMS.gpg files...
 [2020-12-23 14:08:02] 🌎 Downloading and saving Ubuntu signing key...
 [2020-12-23 14:08:02] 👍 Downloaded and saved to /home/user/843938DF228D22F7B3742BC0D94AA3F0EFE21092.keyring
-[2020-12-23 14:08:02] 🔐 Verifying /home/user/ubuntu-original-2020-12-23.iso integrity and authenticity...
+[2020-12-23 14:08:02] 🔐 Verifying /home/user/ubuntu-original-2023-12-23.iso integrity and authenticity...
 [2020-12-23 14:08:09] 👍 Verification succeeded.
 [2020-12-23 14:08:09] 🔧 Extracting ISO image...
 [2020-12-23 14:08:11] 👍 Extracted to /tmp/tmp.jrmlEaDhL3
